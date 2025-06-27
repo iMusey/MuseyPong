@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class CursorController : MonoBehaviour
 {
@@ -19,6 +21,23 @@ public class CursorController : MonoBehaviour
     public void OnNavigate(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnYes(InputAction.CallbackContext context)
+    {
+        Vector2 screenPos = cursor.transform.position;
+
+        PointerEventData pointerData = new PointerEventData(EventSystem.current);
+        pointerData.position = screenPos;
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        GraphicRaycaster raycaster = canvasRect.GetComponent<GraphicRaycaster>();
+        raycaster.Raycast(pointerData, results);
+
+        foreach (RaycastResult result in results)
+        {
+            ExecuteEvents.Execute(result.gameObject, pointerData, ExecuteEvents.pointerClickHandler);
+        }
     }
 
     void Update()

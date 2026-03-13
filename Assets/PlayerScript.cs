@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
     public int color = 0;
     public int paddle = 0;
 
+    public int wins = 0;
+
     public Image cursor;
 
 

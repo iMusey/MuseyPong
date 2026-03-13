@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: bfa72c6859e40404eba458b5c041aa3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -152,7 +152,19 @@ MonoBehaviour:
     m_ActionId: d84df73b-e541-4f78-9b0a-ecb43a7fc36c
     m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3328646463323887488}
+        m_TargetAssemblyTypeName: CursorController, Assembly-CSharp
+        m_MethodName: OnYes
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 553e3457-0732-4993-aa8c-9dc2d0d0bf15
     m_ActionName: UI/Yes[/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
@@ -163,6 +175,46 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 1c97f878-28d2-4f30-a8d9-c007a9b7f2d1
     m_ActionName: Gameplay/Move
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2011267651480335192}
+        m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
+        m_MethodName: OnChangeColorR
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: aff3ad5f-aaca-4cda-9424-f7b89d522aaa
+    m_ActionName: UI/ChangeColor[/XInputControllerWindows/buttonNorth,/XInputControllerWindows1/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 77182097-b931-4da7-8eee-4dc40ede3316
+    m_ActionName: Gameplay/Special[/XInputControllerWindows/buttonWest,/XInputControllerWindows1/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5100427f-8a32-434d-bbb9-7e0adcf90da2
+    m_ActionName: Gameplay/Dash[/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2011267651480335192}
+        m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
+        m_MethodName: OnChangeColorL
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1389b6dc-ac8b-4eb7-b8de-85eaad575605
+    m_ActionName: UI/ChangeColorL[/XInputControllerWindows/leftShoulder,/XInputControllerWindows1/leftShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
@@ -194,3 +246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6ba171a3a465b4b92d0e780c6dc452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: 0
+  paddle: 0
+  cursor: {fileID: 9095917834670825003}

@@ -25,20 +25,24 @@ public class CursorController : MonoBehaviour
 
     public void OnYes(InputAction.CallbackContext context)
     {
-        Vector2 screenPos = cursor.transform.position;
-
-        PointerEventData pointerData = new PointerEventData(EventSystem.current);
-        pointerData.position = screenPos;
-
-        List<RaycastResult> results = new List<RaycastResult>();
-        GraphicRaycaster raycaster = canvasRect.GetComponent<GraphicRaycaster>();
-        raycaster.Raycast(pointerData, results);
-
-        foreach (RaycastResult result in results)
+        if (context.performed)
         {
-            ExecuteEvents.Execute(result.gameObject, pointerData, ExecuteEvents.pointerClickHandler);
+            Vector2 screenPos = cursor.transform.position;
+
+            PointerEventData pointerData = new PointerEventData(EventSystem.current);
+            pointerData.position = screenPos;
+
+            List<RaycastResult> results = new List<RaycastResult>();
+            GraphicRaycaster raycaster = canvasRect.GetComponent<GraphicRaycaster>();
+            raycaster.Raycast(pointerData, results);
+
+            foreach (RaycastResult result in results)
+            {
+                ExecuteEvents.Execute(result.gameObject, pointerData, ExecuteEvents.pointerClickHandler);
+            }
         }
     }
+
 
     void Update()
     {

@@ -8,4 +8,8 @@ public class prefabData : ScriptableObject
 {
     public GameObject[] paddles;
     public Sprite[] paddleSprites;
+    public string[] paddleNames;
+    public string[] paddleDescriptions;
+    public string[] paddleStats;
+    public Color[] colors;
 }

@@ -1,3 +1,4 @@
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,13 +12,18 @@ public class GameManager : MonoBehaviour
     public UIManager uiManager;
     public UIManager.GameState gamestate;
 
-    public static GameManager Instance;
+    public PlayerScript[] p;
+
+    public static GameManager instance;
 
     // Start is called before the first frame update
     void Start()
     {
-        Instance = this;
+        instance = this;
 
+        p = new PlayerScript[10];
+
+        Directory.CreateDirectory(ProfileSaveLoad.GetSaveFolder());
         profileDatabase.profiles = ProfileSaveLoad.LoadAllProfiles();
     }
 
